@@ -12,6 +12,7 @@ function EditDrinkForm(props) {
       flavor: event.target.flavor.value,
       price: event.target.price.value,
       tap: event.target.tap.value,
+      image: event.target.image.value,
       id: drink.id,
     });
   }

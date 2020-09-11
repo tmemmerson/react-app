@@ -8,29 +8,19 @@ function DrinkDetail(props) {
 
   return (
     <React.Fragment>
-      <h1>Drink Detail</h1>
-      <h3>
-        {drink.brand} - {drink.names}
-      </h3>
+      <h1>{drink.names}</h1>
+      <h3>{drink.brand}</h3>
       <p>
         <em>{drink.flavor}</em>
-      </p>
-      <p>
-        <em>{drink.price}</em>
       </p>
       <p>
         <em>{drink.tap}</em>
       </p>
       <p>
         <Figure>
-          <Figure.Image
-            width={171}
-            height={180}
-            alt="171x180"
-            src={drink.picture}
-          />
+          <Figure.Image width={250} height={250} src={drink.picture} />
           <Figure.Caption>
-            Nulla vitae elit libero, a pharetra augue mollis interdum.
+            <em>${drink.price}.00</em>
           </Figure.Caption>
         </Figure>
       </p>
