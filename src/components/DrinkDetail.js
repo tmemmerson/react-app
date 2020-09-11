@@ -14,7 +14,7 @@ function DrinkDetail(props) {
         <em>{drink.flavor}</em>
       </p>
       <p>
-        <em>{drink.tap}</em>
+        <em>On tap: {drink.tap} (oz)</em>
       </p>
       <p>
         <Figure>
