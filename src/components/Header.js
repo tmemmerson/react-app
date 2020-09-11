@@ -30,7 +30,7 @@ function Header(props) {
               <NavDropdown.Item href="#action/3.3">to admit</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                they're pretty
+                they are pretty
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
