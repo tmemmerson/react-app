@@ -13,11 +13,11 @@ class DrinkControl extends React.Component {
       masterDrinkList: [],
       selectedDrink: null,
       editing: false,
-      clicks: 0,
+      /* clicks: 0, */
     };
   }
 
-  IncrementItem = () => {
+  /*   IncrementItem = () => {
     this.setState({ clicks: this.state.clicks + 1 });
   };
   DecreaseItem = () => {
@@ -29,7 +29,7 @@ class DrinkControl extends React.Component {
   handleEditClick = () => {
     console.log("handleEditClick reached!");
     this.setState({ editing: true });
-  };
+  }; */
 
   handleChangingSelectedDrink = (id) => {
     const selectedDrink = this.state.masterDrinkList.filter(
