@@ -28,6 +28,7 @@ Drink.propTypes = {
   brand: PropTypes.string.isRequired,
   flavor: PropTypes.string,
   price: PropTypes.number,
+  picture: PropTypes.string,
   tap: PropTypes.number,
   id: PropTypes.string,
   whenDrinkClicked: PropTypes.func,

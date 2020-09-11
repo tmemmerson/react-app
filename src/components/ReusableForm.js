@@ -15,6 +15,9 @@ function ReusableForm(props) {
           <Form.Control type="text" name="brand" placeholder="Brand" />
         </Form.Group>
         <Form.Group>
+          <Form.Control type="text" name="picture" placeholder="picture url" />
+        </Form.Group>
+        <Form.Group>
           <Form.Control type="number" name="price" placeholder="Price(USD)" />
         </Form.Group>
         <Form.Group>
