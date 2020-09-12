@@ -35,6 +35,11 @@ function DrinkDetail(props) {
         Close Drink
       </Button>
       <hr />
+      <div>
+        <Button onClick={props.IncrementItem}>Click to increment by 1</Button>
+        <Button onClick={props.DecreaseItem}>Click to decrease by 1</Button>
+        {/*    {this.state.show ? <h2>{this.state.clicks}</h2> : ""} */}
+      </div>
     </React.Fragment>
   );
 }
@@ -43,6 +48,8 @@ DrinkDetail.propTypes = {
   drink: PropTypes.object,
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func,
+  onClickDecreaseItem: PropTypes.func,
+  onClickIncreaseItem: PropTypes.func,
 };
 
 export default DrinkDetail;

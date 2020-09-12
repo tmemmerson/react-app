@@ -18,12 +18,12 @@ class DrinkControl extends React.Component {
   }
 
   /*   IncrementItem = () => {
-    this.setState({ clicks: this.state.clicks + 1 });
+    this.setState({ tap: this.state.tap + 1 });
   };
   DecreaseItem = () => {
-    this.setState({ clicks: this.state.clicks - 1 });
-  };
-  ToggleClick = () => {
+    this.setState({ tap: this.state.tap - 1 });
+  }; */
+  /* ToggleClick = () => {
     this.setState({ show: !this.state.show });
   };
   handleEditClick = () => {
@@ -98,6 +98,8 @@ class DrinkControl extends React.Component {
           drink={this.state.selectedDrink}
           onClickingDelete={this.handleDeletingDrink}
           onClickingEdit={this.handleEditClick}
+          onClickDecreaseItem={this.DecreaseItem}
+          onClickIncreaseItem={this.IncrementItem}
         />
       );
       buttonText = "Return to Drink List";
