@@ -13,23 +13,24 @@ class DrinkControl extends React.Component {
       masterDrinkList: [],
       selectedDrink: null,
       editing: false,
-      /* clicks: 0, */
+      clicks: 0,
+      show: true
     };
   }
-
-  /*   IncrementItem = () => {
-    this.setState({ tap: this.state.tap + 1 });
-  };
+  IncrementItem = () => {
+    this.setState({ clicks: this.state.clicks + 1 });
+  }
   DecreaseItem = () => {
-    this.setState({ tap: this.state.tap - 1 });
-  }; */
-  /* ToggleClick = () => {
+    this.setState({ clicks: this.state.clicks - 1 });
+  }
+  ToggleClick = () => {
     this.setState({ show: !this.state.show });
-  };
+  }
+
   handleEditClick = () => {
     console.log("handleEditClick reached!");
     this.setState({ editing: true });
-  }; */
+  };
 
   handleChangingSelectedDrink = (id) => {
     const selectedDrink = this.state.masterDrinkList.filter(
@@ -98,8 +99,8 @@ class DrinkControl extends React.Component {
           drink={this.state.selectedDrink}
           onClickingDelete={this.handleDeletingDrink}
           onClickingEdit={this.handleEditClick}
-          onClickDecreaseItem={this.DecreaseItem}
-          onClickIncreaseItem={this.IncrementItem}
+/*           DecreaseItem={this.DecreaseItem}
+          IncrementItem={this.IncrementItem} */
         />
       );
       buttonText = "Return to Drink List";
@@ -138,7 +139,16 @@ class DrinkControl extends React.Component {
           </button>
           {this.state.show ? <h2>{this.state.clicks}</h2> : ""}
         </div> */}
+         <div>
+        <button onClick={this.IncrementItem}>Click to increment by 1</button>
+        <button onClick={this.DecreaseItem}>Click to decrease by 1</button>
+        <button onClick={this.ToggleClick}>
+          { this.state.show ? 'Hide number' : 'Show number' }
+        </button>
+        { this.state.show ? <h2>{ this.state.clicks }</h2> : '' }
       </div>
+      </div>
+      
     );
   }
 }
