@@ -9,6 +9,8 @@ function DrinkList(props) {
       {props.drinkList.map((drink) => (
         <Drink
           whenDrinkClicked={props.onDrinkSelection}
+          whenUptapClicked={props.onUptapSelection}
+          whenDowntapClicked={props.onDowntapSelection}
           names={drink.names}
           brand={drink.brand}
           flavor={drink.flavor}
@@ -25,6 +27,8 @@ function DrinkList(props) {
 DrinkList.propTypes = {
   drinkList: PropTypes.array,
   onDrinkSelection: PropTypes.func,
+  onUptapSelection: PropTypes.func,
+  onDowntapSelection: PropTypes.func,
 };
 
 export default DrinkList;

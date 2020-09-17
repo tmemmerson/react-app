@@ -22,6 +22,12 @@ function EditDrinkForm(props) {
       <ReusableForm
         formSubmissionHandler={handleEditDrinkFormSubmission}
         buttonText="Update Drink"
+        defaultNames={drink.names}
+        defaultBrand={drink.brand}
+        defaultFlavor={drink.flavor}
+        defaultPrice={drink.price}
+        defaultTap={drink.tap}
+        defaultImage={drink.image}
       />
     </React.Fragment>
   );

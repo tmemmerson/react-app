@@ -11,7 +11,7 @@ function NewDrinkForm(props) {
       brand: event.target.brand.value,
       flavor: event.target.flavor.value,
       price: event.target.price.value,
-      tap: event.target.tap.value,
+      tap: 0,
       picture: event.target.picture.value,
       id: v4(),
     });

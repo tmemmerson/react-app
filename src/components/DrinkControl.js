@@ -13,11 +13,10 @@ class DrinkControl extends React.Component {
       masterDrinkList: [],
       selectedDrink: null,
       editing: false,
-      clicks: 0,
-      show: true
     };
   }
-  IncrementItem = () => {
+
+  /*   IncrementItem = () => {
     this.setState({ clicks: this.state.clicks + 1 });
   }
   DecreaseItem = () => {
@@ -25,10 +24,9 @@ class DrinkControl extends React.Component {
   }
   ToggleClick = () => {
     this.setState({ show: !this.state.show });
-  }
+  } */
 
   handleEditClick = () => {
-    console.log("handleEditClick reached!");
     this.setState({ editing: true });
   };
 
@@ -50,6 +48,40 @@ class DrinkControl extends React.Component {
       this.setState((prevState) => ({
         formVisibleOnPage: !prevState.formVisibleOnPage,
       }));
+    }
+  };
+
+  handleChangingSelectedUptap = (id) => {
+    const selectedDrink = this.state.masterDrinkList.filter(
+      (drink) => drink.id === id
+    )[0];
+    // selectedDrink.tap += 1; Solution 2 not functional programming
+    const incrementedDrink = Object.assign({}, selectedDrink, {
+      tap: selectedDrink.tap + 1,
+    });
+    // const incrementedDrink2 = { ...selectedDrink, tap: selectedDrink.tap + 1}; Solution 3 spread operator
+    const editedMasterDrinkList = this.state.masterDrinkList
+      .filter((drink) => drink.id !== id)
+      .concat(incrementedDrink);
+    this.setState({
+      masterDrinkList: editedMasterDrinkList,
+    });
+  };
+
+  handleChangingSelectedDowntap = (id) => {
+    const selectedDrink = this.state.masterDrinkList.filter(
+      (drink) => drink.id === id
+    )[0];
+    if (selectedDrink.tap > 0) {
+      const decrementedDrink = Object.assign({}, selectedDrink, {
+        tap: selectedDrink.tap - 1,
+      });
+      const editedMasterDrinkList = this.state.masterDrinkList
+        .filter((drink) => drink.id !== id)
+        .concat(decrementedDrink);
+      this.setState({
+        masterDrinkList: editedMasterDrinkList,
+      });
     }
   };
 
@@ -99,8 +131,6 @@ class DrinkControl extends React.Component {
           drink={this.state.selectedDrink}
           onClickingDelete={this.handleDeletingDrink}
           onClickingEdit={this.handleEditClick}
-/*           DecreaseItem={this.DecreaseItem}
-          IncrementItem={this.IncrementItem} */
         />
       );
       buttonText = "Return to Drink List";
@@ -114,6 +144,8 @@ class DrinkControl extends React.Component {
         <DrinkList
           drinkList={this.state.masterDrinkList}
           onDrinkSelection={this.handleChangingSelectedDrink}
+          onUptapSelection={this.handleChangingSelectedUptap}
+          onDowntapSelection={this.handleChangingSelectedDowntap}
         />
       );
       buttonText = "New Drink";
@@ -131,24 +163,7 @@ class DrinkControl extends React.Component {
             {buttonText}
           </Button>
         </React.Fragment>
-        {/*  <div>
-          <button onClick={this.IncrementItem}>Click to increment by 1</button>
-          <button onClick={this.DecreaseItem}>Click to decrease by 1</button>
-          <button onClick={this.ToggleClick}>
-            {this.state.show ? "Hide number" : "Show number"}
-          </button>
-          {this.state.show ? <h2>{this.state.clicks}</h2> : ""}
-        </div> */}
-         <div>
-        <button onClick={this.IncrementItem}>Click to increment by 1</button>
-        <button onClick={this.DecreaseItem}>Click to decrease by 1</button>
-        <button onClick={this.ToggleClick}>
-          { this.state.show ? 'Hide number' : 'Show number' }
-        </button>
-        { this.state.show ? <h2>{ this.state.clicks }</h2> : '' }
       </div>
-      </div>
-      
     );
   }
 }

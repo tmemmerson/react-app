@@ -17,6 +17,13 @@ function Drink(props) {
         <p>
           <em>On tap: {props.tap}(ounces)</em>
         </p>
+        <button onClick={() => props.whenUptapClicked(props.id)}>
+          Add unit
+        </button>
+        <p>{props.vote}</p>
+        <button onClick={() => props.whenDowntapClicked(props.id)}>
+          Remove unit
+        </button>
         <hr />
       </div>
     </React.Fragment>
@@ -32,6 +39,8 @@ Drink.propTypes = {
   tap: PropTypes.number,
   id: PropTypes.string,
   whenDrinkClicked: PropTypes.func,
+  whenDowntapClicked: PropTypes.func,
+  whenUptapClicked: PropTypes.func,
 };
 
 export default Drink;

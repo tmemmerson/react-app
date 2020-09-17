@@ -22,13 +22,6 @@ function ReusableForm(props) {
         </Form.Group>
         <Form.Group>
           <Form.Control
-            type="number"
-            name="tap"
-            placeholder="Volume on-tap(oz.)"
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
             as="textarea"
             name="flavor"
             placeholder="Describe flavor."
